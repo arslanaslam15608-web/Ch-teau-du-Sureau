@@ -1,0 +1,6 @@
+{
+  "name": "Château du Sureau",
+  "description": "Château du Sureau is a 5 star, luxury hotel located near Yosemite in Oakhurst, California. In the castle is Erna's Elderberry House, a 5 diamond restaurant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
