@@ -689,6 +689,11 @@ export const ReserveNowPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    fetch('/api/inquiries', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'package-reservation', ...form }),
+    }).catch(() => {});
     setSubmitted(true);
   };
 
@@ -884,6 +889,11 @@ export const InquireNowPage: React.FC = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                fetch('/api/inquiries', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ type: 'yosemite-inquiry', ...form }),
+                }).catch(() => {});
                 setSubmitted(true);
               }}
               className="bg-white border border-[#D8D0C2] p-8 sm:p-12 space-y-5"
@@ -1024,6 +1034,11 @@ export const CateringProposalPage: React.FC = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                fetch('/api/inquiries', {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ type: 'catering-proposal', ...form }),
+                }).catch(() => {});
                 setSubmitted(true);
               }}
               className="bg-white border border-[#D8D0C2] p-8 sm:p-12 space-y-5"
@@ -1207,7 +1222,6 @@ export const VideoTourPage: React.FC = () => {
               className="w-full aspect-[16/9] bg-black"
             >
               <source src={MEDIA.videoTourMp4} type="video/mp4" />
-              <source src={MEDIA.videoTourWebm} type="video/webm" />
             </video>
           </div>
 

@@ -36,6 +36,11 @@ export const Footer: React.FC = () => {
       return;
     }
     setNewsletterError('');
+    fetch('/api/newsletter', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: trimmed }),
+    }).catch(() => {});
     setSubscribed(true);
     setEmail('');
   };
